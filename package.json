@@ -1,7 +1,7 @@
 {
   "name": "@timkendall/system",
   "version": "1.0.0",
-  "description": "Describe @timkendall/system here",
+  "description": "Tiny async utility for calling system commands.",
   "main": "lib/index.js",
   "module": "es/index.js",
   "files": [
@@ -12,17 +12,25 @@
   "scripts": {
     "build": "nwb build-web-module",
     "clean": "nwb clean-module",
-    "test": "nwb test",
-    "test:coverage": "nwb test --coverage",
-    "test:watch": "nwb test --server"
+    "test": "echo 'Write some tests!'"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --no-semi --single-quote --write",
+      "git add"
+    ]
   },
   "dependencies": {
+    "debug": "^2.6.6"
   },
   "devDependencies": {
-    "nwb": "0.15.x"
+    "husky": "^0.13.3",
+    "lint-staged": "^3.4.1",
+    "nwb": "0.15.x",
+    "prettier": "^1.3.1"
   },
-  "author": "",
+  "author": "Tim Kendall",
   "homepage": "",
   "license": "MIT",
-  "repository": ""
+  "repository": "https://github.com/timkendall/system"
 }
