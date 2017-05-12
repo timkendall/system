@@ -1,16 +1,34 @@
-# @timkendall/system
+# System
 
-[![Travis][build-badge]][build]
-[![npm package][npm-badge]][npm]
-[![Coveralls][coveralls-badge]][coveralls]
+`system(1)` is a tiny wrapper around the `child_process` module. It uses `child_process.spawn(2)` to asynchronously run a shell command in a new process. It returns a `Promise` so that it can be `async/await`'d.
 
-Describe @timkendall/system here.
+## Usage
 
-[build-badge]: https://img.shields.io/travis/user/repo/master.png?style=flat-square
-[build]: https://travis-ci.org/user/repo
+```js
+import system from '@timkendall/system'
 
-[npm-badge]: https://img.shields.io/npm/v/npm-package.png?style=flat-square
-[npm]: https://www.npmjs.org/package/npm-package
+system('docker build .')
+  .then(() => console.log('Build done!'))
+  .catch(() => console.error('Build failed'))
+```
 
-[coveralls-badge]: https://img.shields.io/coveralls/user/repo/master.png?style=flat-square
-[coveralls]: https://coveralls.io/github/user/repo
+Or with `async/await`
+
+```js
+import system from '@timkendall/system'
+
+async function main() {
+  try {
+    console.log('Starting Docker build...')
+    await system('docker build .')
+    console.log('Finished Docker build!')
+  } catch(e) {
+    /* Handle the exception */
+  }
+}
+
+main().then(/* */).catch(/* */)
+```
+## Contributing
+
+Open an issue or submit a PR.
