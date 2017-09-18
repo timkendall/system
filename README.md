@@ -2,10 +2,14 @@
 
 `system(1)` is a tiny wrapper around the `child_process` module. It uses `child_process.spawn(2)` to asynchronously run a shell command in a new process. It returns a `Promise` so that it can be `async/await`'d.
 
+## Installation
+
+`yarn add @spicy/system`
+
 ## Usage
 
 ```js
-import system from '@timkendall/system'
+import system from '@spicy/system'
 
 system('docker build .')
   .then(() => console.log('Build done!'))
@@ -15,7 +19,7 @@ system('docker build .')
 Or with `async/await`
 
 ```js
-import system from '@timkendall/system'
+import system from '@spicy/system'
 
 async function main() {
   try {

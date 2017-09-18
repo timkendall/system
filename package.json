@@ -1,5 +1,5 @@
 {
-  "name": "@timkendall/system",
+  "name": "@spicy/system",
   "version": "1.0.0",
   "description": "Tiny async utility for calling system commands.",
   "main": "lib/index.js",

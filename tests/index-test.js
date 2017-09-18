@@ -4,6 +4,6 @@ import message from 'src/index'
 
 describe('Module template', () => {
   it('displays a welcome message', () => {
-    expect(message).toContain('Welcome to @timkendall/system')
+    expect(message).toContain('Welcome to @spicy/system')
   })
 })
